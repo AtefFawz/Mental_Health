@@ -1,0 +1,44 @@
+#menu {
+  cursor: pointer;
+  z-index: 10;
+}
+
+#close {
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: #00373e;
+  margin-top: 2rem;
+  border: 1px solid #00373e;
+  border-radius: 50%;
+  padding: 0.3em;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+#close:hover {
+  background-color: #00373e;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#navhide {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  backdrop-filter: blur(20px);
+  border-radius: 0 7px 7px 0;
+  width: 60%;
+  height: 100vh;
+  z-index: 10;
+  position: fixed;
+  background-color: #d5d5d5;
+  top: 0;
+}
+#navhide.showNav {
+  transform: translateX(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #d5d5d5;
+}
