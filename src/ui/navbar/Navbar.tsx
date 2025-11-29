@@ -65,18 +65,14 @@ export default function Navbar() {
     );
   });
 
-  // const navRef = useRef(null);
-  // function showNavbar() {
-  //   navRef.current.classList.toggle("showNav");
-  // }
   const navRef = useRef<HTMLDivElement | null>(null);
   function showNavbar() {
     navRef.current?.classList.toggle("showNav");
   }
 
   return (
-    <div className=" overflow-hidden md:px-3 lg:px-4 md:py-7 bg-white/50 rounded-full container mx-auto w-full fixed top-0 left-0 right-0 z-50 md:backdrop-blur-4xl md:mt-5 mt-2">
-      <div className="hidden md:block px-5 ">
+    <div className="overflow-hidden md:px-3 lg:px-4 md:py-7 bg-[#f3eded] rounded-full container mx-auto w-full fixed top-0 left-0 right-0 z-50 md:mt-5 mt-2">
+      <div className="hidden md:block px-5  py-3 rounded-full ">
         <header className="flex flex-row justify-between max-w-full gap-x-5 lg:gap-x-10 items-center  ">
           <nav className="flex flex-row justify-around min-w-fit gap-x-3 lg:gap-x-16 flex-none">
             {extract}

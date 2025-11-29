@@ -7,6 +7,7 @@ import Therapists from "../components/therapists/Therapists";
 import Service from "../components/services/Service";
 import Contact from "../components/contact/Contact";
 import Footer from "../components/footer/Footer";
+import AcademicInfo from "../components/academicInfo/AcademicInfo";
 export default function Home() {
   return (
     <section
@@ -21,6 +22,7 @@ export default function Home() {
       <Community />
       <Faq />
       <Contact />
+      <AcademicInfo />
       <Footer />
     </section>
   );
