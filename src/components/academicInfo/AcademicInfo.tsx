@@ -1,18 +1,16 @@
-"use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
 // Images
 import instituteLogo from "../../components/assets/otherImage/instituteLogo.jpeg";
 import instituteBuilding from "../../components/assets/otherImage/instituteBuilding.jpeg";
 
 const AcademicInfo = () => {
   return (
-    <section className="bg-gray-50 py-16 rounded-2xl">
+    <section className="bg-gray-50 py-16 rounded-2xl w-full">
       <div className="container mx-auto px-4">
         {/* Card Container */}
         <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
           {/* Info Section */}
-          <div className="w-full md:w-1/2 p-8 md:p-12 text-left">
+          <div className="w-full md:w-1/2 p-2 md:p-12 text-left">
             {/* Logo */}
             <div className="flex justify-start mb-6">
               <Image
@@ -23,61 +21,72 @@ const AcademicInfo = () => {
             </div>
 
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Academic Project
+              Field Training Project
             </h2>
 
             <p className="text-gray-600 mb-8 leading-relaxed">
               The <span className="font-bold text-green-700">Solus</span>{" "}
-              platform was designed and developed as a practical assignment for
-              the
+              platform was developed as the primary output for the
+              <span className="font-semibold text-gray-800">
+                {" "}
+                Field Training Program
+              </span>{" "}
+              at
               <span className="font-semibold text-gray-800">
                 {" "}
                 Raya Higher Institute for Management and Foreign Trade
               </span>
-              . This project aims to demonstrate the application of modern web
-              technologies in supporting mental health awareness.
+              . It demonstrates practical skills in Full-Stack Web Development
+              using modern technologies.
             </p>
 
             {/* Student Details Card */}
-            <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
+            <div className="bg-gray-50 p-2 lg:p-3 w-full rounded-xl border border-gray-200 ">
               <h3 className="text-green-700 font-bold uppercase text-xs tracking-wider mb-3 border-b border-gray-200 pb-2">
-                Submitted By
+                Project Details
               </h3>
-              <ul className="space-y-3 text-sm text-gray-700">
+              <ul className="space-y-3 md:text-sm text-xs text-gray-700 min-w-full">
                 <li className="flex items-center">
-                  <span className="font-extrabold w-32 text-[16px]">
+                  <span className="font-extrabold w-32 lg:text-[16px]">
                     Student Name:
                   </span>
-                  <span className="font-bold">Atef Fawzy Khalaf Oraby</span>
+                  <span className="lg:font-bold">Atef Fawzy Khalaf Oraby</span>
+                </li>
+                {/* خانة Web Development موجودة زي ما هي */}
+                <li className="flex items-center">
+                  <span className="font-bold w-36">Training Track:</span>
+                  <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded text-xs font-bold">
+                    Web Development
+                  </span>
                 </li>
                 <li className="flex items-center">
-                  <span className="font-extrabold w-32 text-[16px]">
+                  <span className="lg:font-extrabold font-bold w-32 lg:text-[16px]">
                     Department:
                   </span>
-                  <span className="font-bold">
-                    Management Information Systems (MIS)
+                  <span className="lg:font-bold text-nowrap text-xs">
+                    Information Systems (IS)
                   </span>
                 </li>
                 <li className="flex items-center">
-                  <span className="font-extrabold w-32 text-[16px]">
+                  <span className="lg:font-extrabold font-bold w-32 lg:text-[16px]">
                     Level:
                   </span>
-                  <span className="font-bold">Level 4</span>
+                  <span className="lg:font-bold">Level 4</span>
                 </li>
                 <li className="flex items-center">
-                  <span className="font-extrabold w-32 text-[16px]">
+                  <span className="lg:font-extrabold w-32 font-bold lg:text-[16px]">
                     Supervised By:
                   </span>
-                  <span className="font-bold">Dr. Hadeer Hamdy</span>
+                  <span className="lg:font-bold">Dr.Hadeer Hamdy</span>
                 </li>
                 <li>
                   <span className="flex items-center">
-                    <span className="font-extrabold w-32 text-[16px]">
+                    <span className="lg:font-extrabold w-32 font-bold lg:text-[16px]">
                       Email:
                     </span>
                     <a
                       href="mailto:eng.atef.fawzy@gmail.com"
-                      className="font-bold"
+                      className="lg:font-bold"
                     >
                       eng.atef.fawzy@gmail.com
                     </a>{" "}
