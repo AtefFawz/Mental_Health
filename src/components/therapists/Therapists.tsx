@@ -56,7 +56,7 @@ export default function Therapists() {
                   style={{ backgroundColor: e.btnBg, color: e.btnColor }}
                   key={e.id}
                   onClick={() => setCurrentIndex(e)}
-                  className={` text-xl cursor-pointer p-3 rounded-full
+                  className={` text-xl cursor-pointer rounded-full p-2 flex items-center justify-center
                     `}
                 >
                   <Icon />
