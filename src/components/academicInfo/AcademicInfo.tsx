@@ -5,8 +5,8 @@ import instituteBuilding from "../../components/assets/otherImage/instituteBuild
 
 const AcademicInfo = () => {
   return (
-    <section className="bg-gray-50 py-16 rounded-2xl w-full">
-      <div className="container mx-auto px-4">
+    <section className="bg-gray-50 py-10 rounded-2xl w-full px-4">
+      <div className="container mx-auto ">
         {/* Card Container */}
         <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
           {/* Info Section */}
@@ -52,7 +52,6 @@ const AcademicInfo = () => {
                   </span>
                   <span className="lg:font-bold">Atef Fawzy Khalaf Oraby</span>
                 </li>
-                {/* خانة Web Development موجودة زي ما هي */}
                 <li className="flex items-center">
                   <span className="font-bold w-36">Training Track:</span>
                   <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded text-xs font-bold">
@@ -96,13 +95,13 @@ const AcademicInfo = () => {
             </div>
           </div>
           {/* Image Section (Building) */}
-          <div className="w-full md:w-1/2 h-64 md:h-auto relative  rounded-2xl overflow-hidden">
+          <div className="w-full md:w-1/2 h-64 md:h-auto relative p-2 rounded-2xl overflow-hidden">
             <Image
               src={instituteBuilding}
               alt="Raya Institute Building"
-              className="w-full h-full object-cover rounded-2xl hover:scale-150 transition-transform duration-300 cursor-pointer"
+              className="w-full h-full object-cover rounded-2xl hover:scale-150 transition-transform duration-300 cursor-pointer "
             />
-            <div className="absolute inset-0 bg-gray-900/20  rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gray-900/20 rounded-2xl "></div>
           </div>
         </div>
       </div>

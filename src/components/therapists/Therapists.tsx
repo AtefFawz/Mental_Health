@@ -3,43 +3,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import "./Therapists.css";
-// Images
-import Sonson from "../../components/assets/therapist/sonson.png";
-import Vector from "../../components/assets/therapist/Vector.png";
-import baza from "../../components/assets/therapist/baza.png";
-import Partners from "../../components/assets/therapist/Our Partners.png";
-import medium from "../../components/assets/therapist/medium.png";
-import notion from "../../components/assets/therapist/notion.png";
-
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { therapistsData, arrayOfImages, obg } from "../data/Therapists";
 export default function Therapists() {
-  const araay = [
-    {
-      description:
-        "Solus made it so easy to find the right therapist for me. The sessions have truly transformed my mindset, and I feel more in control of my emotions than ever before!",
-      span: "— Anna R., 32",
-      background: "#F9E6D0",
-      colortext: "#00373E",
-      btn: <ArrowBackIcon />,
-      btnbg: "white",
-      btncolor: "#00373E",
-    },
-    {
-      description:
-        "I was struggling with stress and anxiety, but the mindfulness programs on Solus have helped me regain balance. I finally feel likeI'm prioritizing my mental well-being. ",
-      span: "— Mark S., 41",
-      background: "#00373E",
-      colortext: "#F9E6D0",
-      btn: <ArrowForwardIcon />,
-      btnbg: "#00373E",
-      btncolor: "white",
-    },
-  ];
-  const [currentIndex, setCurrentIndex] = useState(araay[0]);
-  const araayOfImages = [Sonson, Vector, baza, Partners, medium, notion];
+  const [currentIndex, setCurrentIndex] = useState(therapistsData[0]);
   // Motion
-
   const parent = { visible: { transition: { staggerChildren: 0.5 } } };
   const child = {
     hidden: { opacity: 0, scale: 0 },
@@ -63,21 +30,21 @@ export default function Therapists() {
           className=" space-y-6 flex flex-col justify-evenly  md:max-w-1/2 w-full md:order-1 order-2 px-5"
         >
           <h1 className="font-bold text-xl md:text-3xl lg:text-4xl text-[#00373E] ">
-            What Our Clients Are Saying
+            {obg.title}
           </h1>
           <p className=" md:text-lg lg:text-xl text-[#00373E] wrap-break-word">
-            Positive experiences from users who have benefited from therapy or
-            wellness programs.
+            {obg.description}
           </p>
           <motion.div
             variants={parent}
             initial="hidden"
             whileInView="visible"
-            className="flex items-center "
+            className="flex items-center gap-3"
           >
-            {araay.map((e, index) => {
+            {therapistsData.map((e) => {
+              const Icon = e.btn;
               return (
-                <motion.button
+                <motion.div
                   variants={child}
                   viewport={{ once: false }}
                   transition={{ type: "spring", stiffness: 500 }}
@@ -86,14 +53,14 @@ export default function Therapists() {
                     boxShadow: "0px 10px 30px rgba(0,0,0,0.12)",
                   }}
                   whileTap={{ scale: 0.98 }}
-                  style={{ backgroundColor: e.btnbg, color: e.btncolor }}
-                  key={index}
+                  style={{ backgroundColor: e.btnBg, color: e.btnColor }}
+                  key={e.id}
                   onClick={() => setCurrentIndex(e)}
-                  className={` text-xl cursor-pointer
+                  className={` text-xl cursor-pointer p-3 rounded-full
                     `}
                 >
-                  {e.btn}
-                </motion.button>
+                  <Icon />
+                </motion.div>
               );
             })}
           </motion.div>
@@ -110,7 +77,7 @@ export default function Therapists() {
             }}
             style={{
               backgroundColor: currentIndex.background,
-              color: currentIndex.colortext,
+              color: currentIndex.colorText,
             }}
             className="flex flex-col justify-evenly rounded-3xl p-10 gap-8 z-5 left-16 max-w-2xl min-h-90 max-h-90 shadow-md "
           >
@@ -124,17 +91,17 @@ export default function Therapists() {
         </div>
       </section>
       <motion.div
-        initial={{ opacity: 0, scale: 0.1 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{
           duration: 0.8,
           type: "tween",
           ease: "linear",
           delay: 0.2,
         }}
-        className="flex justify-between bg-white p-6 rounded-4xl"
+        className="flex justify-between items-center bg-white p-6 rounded-4xl"
       >
-        {araayOfImages.map((image, index) => {
+        {arrayOfImages.map((image, index) => {
           return (
             <motion.div
               key={index}
@@ -144,7 +111,7 @@ export default function Therapists() {
               <Image
                 src={image}
                 alt="image"
-                className="md:max-w-[6rem] max-w-[2.8rem] object-contain lg:max-w-[9rem] cursor-pointer "
+                className="md:-w-[6rem] max-w-[2.8rem] object-contain lg:max-w-36 cursor-pointer "
               />
             </motion.div>
           );
