@@ -15,10 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: {
+    template: "%s | Solus",
+    default: "Solus - Mental Health Platform",
+  },
   description: "Mental Health app",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{

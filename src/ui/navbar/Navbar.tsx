@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 import "./navbar.css";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import CloseIcon from "@mui/icons-material/Close";
@@ -31,17 +32,17 @@ export default function Navbar() {
   //   Extracting the names and creating links
   const extract = data.map((item, ind) => {
     return (
-      <a
+      <Link
         key={ind}
         href={`#${item}`}
-        className={`font-medium text-xl md:text-lg lg:text-xl ${
+        className={` font-medium text-xl md:text-lg lg:text-xl ${
           active === item
             ? "text-blue-500 font-bold border-b-2"
-            : "text-gray-600"
+            : "text-gray-600 "
         }`}
       >
         {item}
-      </a>
+      </Link>
     );
   });
 
@@ -51,17 +52,17 @@ export default function Navbar() {
 
   const extract2 = nav2.map((item, ind) => {
     return (
-      <a
+      <Link
         key={ind}
         href={`#${item}`}
-        className={`font-medium text-xl md:text-lg lg:text-xl ${
+        className={` text-xl md:text-lg lg:text-xl ${
           active === item
             ? "text-blue-500 font-bold border-b-2"
-            : "text-gray-600"
+            : "text-gray-600 font-medium"
         }`}
       >
         {item}
-      </a>
+      </Link>
     );
   });
 

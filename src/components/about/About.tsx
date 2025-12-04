@@ -10,7 +10,8 @@ export default function About() {
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className=" flex flex-col justify-start items-start md:w-1/2 lg:w-1/2 lg:px-20 md:px-2 order-2 md:order-1 px-4"
+          className=" flex flex-col justify-start items-start
+           md:w-1/2 lg:w-1/2 lg:px-20 md:px-2 order-2 md:order-1 px-4"
         >
           <span className="text-3 font-light text-[#00373E] absolute md:top-20  hidden">
             HOW IT WORKS
@@ -27,7 +28,8 @@ export default function About() {
             whileInView={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.98 }}
-            className=" bg-[#00373E] text-white rounded-3xl md:px-7 md:py-3 md:my-8 px-5 py-2 my-5 font-bold hover:shadow-md hover:shadow-[#00373E]  cursor-pointer  duration-300 ease-out text-nowrap"
+            className=" bg-[#00373E] text-white rounded-3xl md:px-7
+             md:py-3 md:my-8 px-5 py-2 my-5 font-bold hover:shadow-md hover:shadow-[#00373E]  cursor-pointer  duration-300 ease-out text-nowrap"
           >
             Find a Therapist
           </motion.button>
@@ -41,7 +43,7 @@ export default function About() {
           <Image
             src={Frame}
             alt="Frame"
-            className="min-20 md:w-sm md-h-md lg:w-lg w-lg   overflow-hidden"
+            className="min-20 md:w-sm md-h-md lg:w-lg w-lg overflow-hidden"
           />
         </motion.div>
       </div>

@@ -1,48 +1,9 @@
 "use client";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "motion/react";
-
+import { arrayOfLinks, arrayOfObject } from "../data/arrayOfLinks";
 export default function Contact() {
-  const arrayOfObject = [
-    { name: "Email", value: "eng.atef.fawzy@gmail.com", mil: "mailto" },
-    { name: "Phone", value: "01061293751" },
-    { name: "Address", value: "Alexandria" },
-  ];
-  const arrayOfLinks = [
-    {
-      link: "https://www.facebook.com/Atef.Fawzy.Khalaf?mibextid=ZbWKwL",
-      icon: <FacebookIcon />,
-      bg: "#BFDBFE ",
-      textColor: "#1E3A8A.",
-      shadow: "#93C5FD",
-    },
-    {
-      link: "https://www.instagram.com/atef.fawzy",
-      icon: <InstagramIcon />,
-      bg: "#F3E8FF ",
-      textColor: "#3B0764.",
-      shadow: "#C084FC",
-    },
-    {
-      link: "https://wa.me/qr/KSHI43LCU4DJO1 ",
-      icon: <WhatsAppIcon />,
-      bg: "#DCFCE7 ",
-      textColor: "#065F46.",
-      shadow: "#86EFAC",
-    },
-    {
-      link: "https://www.linkedin.com/in/atef-fawzy-b664b630a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      icon: <LinkedInIcon />,
-      bg: "#BFDBFE ",
-      textColor: "#1E3A8A..",
-      shadow: "#93C5FD",
-    },
-  ];
   // Animation For Motion
   const parent = { visible: { transition: { staggerChildren: 0.5 } } };
   const child = {
@@ -96,28 +57,31 @@ export default function Contact() {
             whileInView="visible"
             className="flex gap-x-5 text-xl"
           >
-            {arrayOfLinks.map((e, index) => (
-              <motion.a
-                variants={child}
-                viewport={{ once: false }}
-                transition={{ type: "spring", stiffness: 200 }}
-                whileTap={{ scale: 0.98 }}
-                key={index}
-                whileHover={{
-                  scale: 1.13,
-                  boxShadow: `0px 10px 30px ${e.shadow}`,
-                  color: e.textColor,
-                }}
-                style={{
-                  backgroundColor: e.bg,
-                }}
-                href={e.link}
-                className="p-2 rounded-full text-center cursor-pointer "
-                target="blank"
-              >
-                {e.icon}
-              </motion.a>
-            ))}
+            {arrayOfLinks.map((e, index) => {
+              const Icon = e.icon;
+              return (
+                <motion.a
+                  variants={child}
+                  viewport={{ once: false }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                  whileTap={{ scale: 0.98 }}
+                  key={index}
+                  whileHover={{
+                    scale: 1.13,
+                    boxShadow: `0px 10px 30px ${e.shadow}`,
+                    color: e.textColor,
+                  }}
+                  style={{
+                    backgroundColor: e.bg,
+                  }}
+                  href={e.link}
+                  className="p-2 rounded-full text-center cursor-pointer "
+                  target="blank"
+                >
+                  <Icon />
+                </motion.a>
+              );
+            })}
           </motion.div>
           <p className="text-lg md:text-xl">
             We typically respond within 12 hours.

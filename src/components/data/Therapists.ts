@@ -1,5 +1,4 @@
 import React from "react";
-import { SvgIconComponent } from "@mui/icons-material";
 // Images
 import Sonson from "../../components/assets/therapist/sonson.png";
 import Vector from "../../components/assets/therapist/Vector.png";

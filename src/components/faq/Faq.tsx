@@ -36,7 +36,7 @@ export default function Faq() {
           initial="hidden"
           whileInView="visible"
           className="flex flex-col justify-around md:gap-x-7 gap-y-5 
-        md:max-w-1/2  w-full "
+        md:max-w-1/2 w-full "
         >
           {array.map((e, index) => (
             <motion.div
@@ -50,9 +50,9 @@ export default function Faq() {
             >
               <h3 className="font-bold text-lg md:text-xl lg:2xl flex justify-between items-center ">
                 {e}
-                <span className="bg-[#F7F6F4] rounded-full p-2 hover:scale-120 duration-300 ease-out cursor-pointer hover:rotate-90">
+                <div className="bg-[#F7F6F4] rounded-full p-2 hover:scale-120 duration-300 ease-out cursor-pointer hover:rotate-90">
                   <AddCircleIcon style={{ fontSize: "2.5rem" }} />
-                </span>
+                </div>
               </h3>
             </motion.div>
           ))}

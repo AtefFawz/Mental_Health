@@ -9,7 +9,7 @@ import Contact from "../components/contact/Contact";
 import Footer from "../components/footer/Footer";
 import AcademicInfo from "../components/academicInfo/AcademicInfo";
 export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return (
     <section
       className="container mx-auto px-2 md:px-4 md:space-y-25 space-y-15
