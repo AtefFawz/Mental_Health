@@ -1,31 +1,27 @@
-import HomeComponent from "../components/home/Home";
-import About from "../components/about/About";
-import Community from "../components/community/Community";
-import Resources from "../components/resources/Resources";
-import Faq from "../components/faq/Faq";
-import Therapists from "../components/therapists/Therapists";
-import Service from "../components/services/Service";
-import Contact from "../components/contact/Contact";
-import Footer from "../components/footer/Footer";
-import AcademicInfo from "../components/academicInfo/AcademicInfo";
-export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+import { About } from "@/features/about/About";
+import { Community } from "@/features/community/Community";
+import { Contact } from "@/features/contact/Contact";
+import { Faq } from "@/features/faq/Faq";
+import { Hero } from "@/features/hero/Hero";
+import { Resources } from "@/features/resources/Resources";
+import { Services } from "@/features/services/Services";
+import { Testimonials } from "@/features/testimonials/Testimonials";
+import { Therapists } from "@/features/therapists/Therapists";
+import { Toolkit } from "@/features/toolkit/Toolkit";
+
+export default function HomePage() {
   return (
-    <section
-      className="container mx-auto px-2 md:px-4 md:space-y-25 space-y-15
-      flex justify-around flex-col overflow-hidden py-10"
-    >
-      <HomeComponent />
+    <>
+      <Hero />
       <About />
-      <Service />
+      <Services />
+      <Toolkit />
       <Therapists />
+      <Testimonials />
       <Resources />
       <Community />
       <Faq />
       <Contact />
-      <AcademicInfo />
-
-      <Footer />
-    </section>
+    </>
   );
 }

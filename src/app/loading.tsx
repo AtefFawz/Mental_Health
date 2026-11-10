@@ -1,7 +1,8 @@
 export default function Loading() {
   return (
-    <div className="flex justify-center items-center h-screen w-full bg-gray-300 container mx-auto">
-      <p className="font-extrabold text-3xl text-gray-900">Loading...</p>
-    </div>
+    <main className="loading-screen" aria-live="polite" aria-busy="true">
+      <span className="loading-mark" aria-hidden="true">s.</span>
+      <p>Making a little space…</p>
+    </main>
   );
 }

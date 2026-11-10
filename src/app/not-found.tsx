@@ -1,25 +1,21 @@
-"use client";
-import { useRouter } from "next/navigation";
+import type { Metadata } from "next";
+import { Button } from "@/components/ui/Button";
+
+export const metadata: Metadata = { title: "Page not found" };
+
 export default function NotFound() {
-  const router = useRouter();
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-gray-50 text-center px-4">
-      <h1 className="text-9xl font-bold text-green-700">404</h1>
-
-      <h2 className="text-3xl font-semibold text-gray-800 mt-4">
-        عذراً، هذه الصفحة غير موجودة
-      </h2>
-      <p className="text-gray-600 mt-2 text-lg max-w-md">
-        ربما تم نقل الصفحة أو أن الرابط الذي حاولت الوصول إليه غير صحيح. لا
-        تقلق، يمكنك العودة للبداية.
+    <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4 text-center">
+      <p className="font-display text-8xl font-semibold text-ink/20" aria-hidden>
+        404
       </p>
-
-      <button
-        onClick={() => router.back()}
-        className="mt-8 px-6 py-3 bg-green-700 text-white rounded-full hover:bg-green-800 transition-colors duration-300 font-bold"
-      >
-        العودة للصفحة الرئيسية
-      </button>
+      <h1 className="text-3xl font-semibold md:text-4xl">This page doesn&apos;t exist</h1>
+      <p className="max-w-md text-lg text-ink-muted">
+        The page may have moved, or the link may be incorrect. Let&apos;s get you back on track.
+      </p>
+      <Button href="/" size="lg">
+        Back to home
+      </Button>
     </div>
   );
 }

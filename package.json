@@ -1,22 +1,30 @@
 {
-  "name": "mental-health",
-  "version": "0.1.0",
+  "name": "solus-mental-health",
+  "version": "1.0.0",
   "private": true,
+  "description": "Solus — an accessible mental-health support platform built with Next.js, React 19 and Tailwind CSS 4.",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run typecheck && npm run test"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.5",
-    "@mui/material": "^7.3.5",
     "motion": "^12.23.24",
     "next": "16.0.5",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-icons": "^5.5.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -26,7 +34,10 @@
     "baseline-browser-mapping": "^2.8.32",
     "eslint": "^9",
     "eslint-config-next": "16.0.5",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.4"
   }
 }
