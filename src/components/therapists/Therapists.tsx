@@ -2,10 +2,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+// @ts-ignore CSS side-effect imports are handled by Next.js.
 import "./Therapists.css";
 import { therapistsData, arrayOfImages, obg } from "../data/Therapists";
 export default function Therapists() {
-  const [currentIndex, setCurrentIndex] = useState(therapistsData[0]);
+  const [currentIndex, setCurrentIndex] = useState(therapistsData[0]!);
   // Motion
   const parent = { visible: { transition: { staggerChildren: 0.5 } } };
   const child = {
